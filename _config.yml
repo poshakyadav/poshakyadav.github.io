@@ -3,6 +3,7 @@ description: Personal portfolio with tech blogs and documentation for YouTube st
 url: "https://poshakyadav.github.io"
 baseurl: ""
 # theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes@4.27.3"
 plugins:
   - jekyll-feed
   - jekyll-include-cache
