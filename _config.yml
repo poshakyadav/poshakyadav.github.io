@@ -2,7 +2,7 @@ title: Your Portfolio Site
 description: Personal portfolio with tech blogs and documentation for YouTube students.
 url: "https://poshakyadav.github.io"
 baseurl: ""
-theme: minimal-mistakes-jekyll
+# theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
   - jekyll-include-cache
