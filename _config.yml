@@ -1,42 +1,80 @@
-title: Your Portfolio Site
-description: Personal portfolio with tech blogs and documentation for YouTube students.
+title: "Poshak Yadav | Software Engineer"
+description: "A portfolio showcasing the work and expertise of Poshak Yadav, a Software Engineer specializing in Java, Python, and modern web technologies. Explore my projects, technical blogs, and a passion for open-source development."
 url: "https://poshakyadav.github.io"
 baseurl: ""
-# theme: minimal-mistakes-jekyll
 remote_theme: "mmistakes/minimal-mistakes@4.27.3"
+
 plugins:
   - jekyll-feed
   - jekyll-include-cache
+
+# Exclude pages/ from Jekyll processing
+# exclude:
+#   - pages/
+
 defaults:
-  - scope:
-      path: ""
-    values:
-      layout: single  # default layout for clean pages
+  # - scope:
+  #     path: "pages/**/*"
+  #   values:
+  #     layout: single  # default layout for clean pages
   - scope:
       path: "blogs/**/*"
     values:
       layout: single
       author_profile: true
-minimal_mistakes_skin: "default"  # Options: default, air, aqua, etc.
+  - scope:
+      path: "blogs/linux-mastery"
+    values:
+      sidebar:
+        nav: "linux-mastery"
+      toc: true
+      toc_label: "Table of Contents"
+      toc_icon: "cog"  # Optional icon for TOC
+  - scope:
+      path: "blogs/java-notes"
+    values:
+      sidebar:
+        nav: "java-notes"
+      toc: true
+      toc_label: "Table of Contents"
+      toc_icon: "cog"  # Optional icon for TOC
+
+minimal_mistakes_skin: "air"  # Modern look; options: default, air, aqua, contrast, dark, dirt, neon, mint, plum, sunrise
 author:
   name: "Poshak Yadav"
   # avatar: "/assets/images/your-avatar.jpg"  # Add later
-  bio: "YouTube creator sharing tech tutorials on Linux, Java, and more."
+  bio: "Software Engineer specializing in backend and frontend development. Passionate about building robust systems and sharing knowledge through technical blogs and through Youtube."
   links:
-    - label: "YouTube"
-      icon: "fab fa-youtube"
-      url: "https://youtube.com/your-channel"
     - label: "GitHub"
       icon: "fab fa-github"
       url: "https://github.com/poshakyadav"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://linkedin.com/in/your-linkedin-profile" # Add your LinkedIn URL
+    - label: "Twitter"
+      icon: "fab fa-twitter-square"
+      url: "https://twitter.com/your-twitter-handle" # Optional
+    - label: "YouTube"
+      icon: "fab fa-youtube"
+      url: "https://youtube.com/your-channel"
 footer:
   links:
     - label: "GitHub"
       icon: "fab fa-github"
       url: "https://github.com/poshakyadav"
-masthead_title: "Your Portfolio"  # Header title
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://linkedin.com/in/your-linkedin-profile"
+    - label: "Email"
+      icon: "fas fa-envelope-square"
+      url: "mailto:poshakyadav@example.com"
+
+masthead_title: "Poshak Yadav"  # Header title
 breadcrumb: true  # Navigation breadcrumbs
-search: true  # Site search
+search: true  # Enable search
+search_full_content: true  # Index full page content (optional but recommended for better results)
+lunr:
+  search_within_pages: true  # Index pages like your blogs
 category_archive:
   type: liquid
   path: /categories/

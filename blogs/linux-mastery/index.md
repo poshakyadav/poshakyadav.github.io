@@ -1,5 +1,6 @@
 ---
 title: Linux Operation System
+excerpt: "Overview and table of contents for my Linux notes."
 ---
 
 # Linux Operation System

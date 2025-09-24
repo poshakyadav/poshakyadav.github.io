@@ -6,13 +6,9 @@ source "https://rubygems.org"
 
 gem "jekyll"
 gem "webrick", "~> 1.9"
-# gem "minimal-mistakes-jekyll"
-# gem "jekyll-sass-converter", "~> 2.1"
-# gem "bigdecimal"
 gem "jekyll-feed"
 gem "jekyll-include-cache"  
 gem "logger"
-# gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 gem "github-pages", group: :jekyll_plugins
 gem "jekyll-include-cache", group: :jekyll_plugins

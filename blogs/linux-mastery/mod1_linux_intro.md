@@ -1,6 +1,6 @@
 ---
 title: Module 1 - Introduction to Linux
-permalink:  /blogs/linux-mastery/mod1_linux_intro
+# permalink:  /blogs/linux-mastery/mod1_linux_intro
 ---
 
 # Module 1: Introduction to Linux
