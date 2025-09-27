@@ -1,0 +1,188 @@
+<main class="bg-gray-50 font-sans leading-normal tracking-normal py-16 sm:py-24">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Let's Talk Business ☕</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Whether you have a project idea, a job offer, or just want to say hi, I'm here. Send me a
+        message!
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div class="lg:col-span-1 bg-white p-8 rounded-xl shadow-lg h-fit">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-3">My Details</h2>
+
+        <div class="mb-6">
+          <p class="text-sm font-semibold text-indigo-600 uppercase mb-1">Email Me</p>
+          <a
+            href="mailto:ydv.psk@gmail.com"
+            class="text-lg text-gray-800 hover:text-indigo-700 transition-colors break-words"
+          >
+            ydv.psk@gmail.com
+          </a>
+        </div>
+
+        <div class="mb-6">
+          <p class="text-sm font-semibold text-indigo-600 uppercase mb-1">Call/WhatsApp</p>
+          <a
+            href="tel:+919876543210"
+            class="text-lg text-gray-800 hover:text-indigo-700 transition-colors"
+          >
+            +91-1234567890
+          </a>
+        </div>
+
+        <div>
+          <p class="text-sm font-semibold text-indigo-600 uppercase mb-3">Connect on Social</p>
+          <div class="flex space-x-4">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-500 hover:text-indigo-600 transition-colors"
+              aria-label="LinkedIn Profile"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.366-4-3.266-4 0v5.604h-3v-11h3v1.765c1.393-2.35 4-2.502 4-2.502s4-.108 4 3.906v7.831z"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-500 hover:text-indigo-600 transition-colors"
+              aria-label="GitHub Profile"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 0C5.372 0 0 5.372 0 12c0 5.309 3.438 9.805 8.205 11.385.6.11.82-.26.82-.578v-1.99c-3.336.723-4.04-1.606-4.04-1.606-.546-1.385-1.332-1.755-1.332-1.755-1.09-.74.08-1.077.08-1.077 1.205.085 1.838 1.238 1.838 1.238 1.07 1.838 2.809 1.306 3.48.99.108-.772.42-1.306.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.385 1.237-3.22-.123-.3-.535-1.52.117-3.175 0 0 1.008-.32 3.3.615 2.052-.562 4.25-.562 6.302 0 2.29-.562 3.298-.615 3.298-.615.652 1.655.24 2.875.118 3.175.772.835 1.237 1.91 1.237 3.22 0 4.61-2.802 5.62-5.474 5.922.43.37.818 1.106.818 2.23v3.29c0 .32.22.688.825.578C20.565 21.805 24 17.31 24 12c0-6.628-5.372-12-12-12z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-500 hover:text-indigo-600 transition-colors"
+              aria-label="Twitter Profile"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.901 1.153h3.682l-7.744 8.799 9.074 12.046h-7.636l-5.698-7.587-6.28 7.587h-3.681l8.136-9.749L1.472 1.153h7.925l5.068 6.402L18.901 1.153zm-1.12 18.232h1.693L7.005 3.39h-1.89l12.568 15.995z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2 bg-white p-8 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6 border-b pb-3">Send Me a Message</h2>
+        <form (ngSubmit)="submitForm()" class="space-y-6">
+          <div>
+            <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1"
+              >Full Name</label
+            >
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Your Name"
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1"
+              >Email Address</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200"
+            />
+          </div>
+
+          <div>
+            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1"
+              >Subject</label
+            >
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Project Inquiry, Job Offer, etc."
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200"
+            />
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-1"
+              >Your Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Tell me about your project or inquiry..."
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200"
+            ></textarea>
+          </div>
+
+          <!-- Notifing feature is not working currently -->
+          <p class="text-red-600 font-medium">
+            The message form is temporarily disabled. Please reach out directly via
+            <a href="mailto:ydv.psk@gmail.com" class="underline hover:text-red-800">email</a> to
+            connect!
+          </p>
+          <button
+            type="submit"
+            class="w-full px-6 py-3 bg-indigo-600 text-white font-bold rounded-lg shadow-lg hover:bg-indigo-700 transition-transform transform hover:-translate-y-0.5 duration-300 flex items-center justify-center space-x-2 hover:cursor-not-allowed"
+            disabled
+          >
+            <span>Send Message</span>
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              ></path>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>

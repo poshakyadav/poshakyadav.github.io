@@ -1,0 +1,184 @@
+<main class="bg-gray-50 font-sans leading-normal tracking-normal py-16 sm:py-24">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+        My Creative Portfolio 🚀
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        A curated collection of my work, demonstrating my full-stack capabilities, from robust
+        backend systems to pixel-perfect frontend interfaces.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <div class="flex flex-wrap justify-center gap-3">
+        <button
+          (click)="filterProjects('all')"
+          [class.bg-indigo-600]="activeFilter === 'all'"
+          [class.text-white]="activeFilter === 'all'"
+          [class.bg-gray-200]="activeFilter !== 'all'"
+          [class.text-gray-700]="activeFilter !== 'all'"
+          class="px-5 py-2 text-sm font-medium rounded-full transition-all duration-200 hover:bg-indigo-500 hover:text-white"
+        >
+          All Projects ({{ allProjects.length }})
+        </button>
+
+        <button
+          (click)="filterProjects('Frontend')"
+          [class.bg-indigo-600]="activeFilter === 'Frontend'"
+          [class.text-white]="activeFilter === 'Frontend'"
+          [class.bg-gray-200]="activeFilter !== 'Frontend'"
+          [class.text-gray-700]="activeFilter !== 'Frontend'"
+          class="px-5 py-2 text-sm font-medium rounded-full transition-all duration-200 hover:bg-indigo-500 hover:text-white"
+        >
+          Frontend ({{ frontendProjectsCount }})
+        </button>
+
+        <button
+          (click)="filterProjects('Full-Stack')"
+          [class.bg-indigo-600]="activeFilter === 'Full-Stack'"
+          [class.text-white]="activeFilter === 'Full-Stack'"
+          [class.bg-gray-200]="activeFilter !== 'Full-Stack'"
+          [class.text-gray-700]="activeFilter !== 'Full-Stack'"
+          class="px-5 py-2 text-sm font-medium rounded-full transition-all duration-200 hover:bg-indigo-500 hover:text-white"
+        >
+          Full-Stack ({{ fullStackProjectsCount }})
+        </button>
+
+        <button
+          (click)="filterProjects('Backend')"
+          [class.bg-indigo-600]="activeFilter === 'Backend'"
+          [class.text-white]="activeFilter === 'Backend'"
+          [class.bg-gray-200]="activeFilter !== 'Backend'"
+          [class.text-gray-700]="activeFilter !== 'Backend'"
+          class="px-5 py-2 text-sm font-medium rounded-full transition-all duration-200 hover:bg-indigo-500 hover:text-white"
+        >
+          Backend ({{ backendProjectsCount }})
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <div *ngIf="filteredProjects.length > 0; else noProjects">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div
+            *ngFor="let project of filteredProjects"
+            class="bg-white rounded-xl shadow-lg overflow-hidden group transform hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+          >
+            <img
+              [src]="project.imageUrl"
+              [alt]="project.title + ' Project Screenshot'"
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-gray-800">
+                  {{ project.title }}
+                </h3>
+                <span
+                  [ngClass]="project.categoryBadgeClass"
+                  class="text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                >
+                  {{ project.category }}
+                </span>
+              </div>
+              <p class="text-gray-600 mb-4 line-clamp-3">
+                {{ project.description }}
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  *ngFor="let tag of project.tags"
+                  class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                  >{{ tag }}</span
+                >
+              </div>
+              <div class="mt-4 flex space-x-4 text-sm font-semibold">
+                <a
+                  [href]="project.liveUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-indigo-600 hover:text-indigo-800 transition-colors flex items-center"
+                >
+                  Live Demo
+                  <svg
+                    class="w-4 h-4 ml-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    ></path>
+                  </svg>
+                </a>
+                <a
+                  [href]="project.sourceUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-600 hover:text-gray-800 transition-colors flex items-center"
+                >
+                  Source Code
+                  <svg
+                    class="w-4 h-4 ml-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.002 12.002 0 0012 21c3.678 0 7.357-1.077 10.382-3.04a12.002 12.002 0 00-10.382-14.016z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ng-template #noProjects>
+        <div class="text-center py-20 border-2 border-dashed border-gray-300 rounded-xl bg-white">
+          <svg
+            class="w-16 h-16 text-indigo-400 mx-auto mb-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+          <h3 class="text-2xl font-semibold text-gray-800 mb-2">No Projects Found</h3>
+          <p class="text-gray-600">
+            Try selecting a different filter or check back soon for updates!
+          </p>
+        </div>
+      </ng-template>
+    </section>
+
+    <section class="bg-indigo-700 rounded-xl mt-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white">Ready to Start Your Project?</h2>
+        <p class="text-lg text-indigo-200 mt-3 mb-8 max-w-2xl mx-auto">
+          If you like what you see, let's discuss how I can help bring your next idea to life.
+        </p>
+        <a
+          routerLink="/contact"
+          class="inline-block px-10 py-4 bg-white text-indigo-700 font-bold rounded-lg shadow-xl hover:bg-gray-100 transition-transform transform hover:scale-105 duration-300"
+        >
+          Book a Call 📞
+        </a>
+      </div>
+    </section>
+  </div>
+</main>

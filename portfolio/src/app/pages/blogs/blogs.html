@@ -1,0 +1,115 @@
+<main class="bg-gray-50 font-sans leading-normal tracking-normal py-16 sm:py-24">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+        The Full-Stack Dev Blog ✍️
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+        My thoughts, tutorials, and deep dives on Angular, Spring Boot, modern development
+        practices, and career growth.
+      </p>
+
+      <div class="max-w-xl mx-auto">
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="Search for posts (e.g., Angular, Observables, Spring)"
+            class="w-full px-6 py-3 border border-gray-300 rounded-full pl-12 text-lg focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200 shadow-md"
+            (input)="searchPosts($event)"
+          />
+          <svg
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-12 text-center">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Topics</h2>
+      <div class="flex flex-wrap justify-center gap-3">
+        <button
+          *ngFor="let tag of allTags"
+          (click)="filterByTag(tag)"
+          [class.bg-indigo-600]="activeTag === tag"
+          [class.text-white]="activeTag === tag"
+          [class.bg-gray-200]="activeTag !== tag"
+          [class.text-gray-700]="activeTag !== tag"
+          class="px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 hover:bg-indigo-500 hover:text-white shadow-sm"
+        >
+          {{ tag }}
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <div *ngIf="filteredPosts.length > 0; else noPosts">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <a
+            *ngFor="let post of filteredPosts"
+            [routerLink]="['/blogs', post.slug]"
+            class="block bg-white rounded-xl shadow-lg overflow-hidden group transform hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+          >
+            <img
+              [src]="post.imageUrl"
+              [alt]="post.title"
+              class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span
+                  class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                  >{{ post.primaryTag }}</span
+                >
+                <span class="text-sm text-gray-500">{{ post.date | date : 'mediumDate' }}</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2 line-clamp-2">
+                {{ post.title }}
+              </h3>
+              <p class="text-gray-600 mb-4 line-clamp-3">
+                {{ post.excerpt }}
+              </p>
+              <span
+                class="text-indigo-600 font-semibold text-sm hover:text-indigo-800 transition-colors"
+              >
+                Read Post →
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <ng-template #noPosts>
+        <div class="text-center py-20 border-2 border-dashed border-gray-300 rounded-xl bg-white">
+          <svg
+            class="w-16 h-16 text-indigo-400 mx-auto mb-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 6.253v13m0-13C10.832 5.477 9.224 4.5 7.5 4.5A4.5 4.5 0 003 9v10.5M12 6.253c1.168.176 2.17 1.056 3.03 2.5.83.35 1.7.53 2.6.53 1.724 0 3.332-.977 4.5-2.247M12 6.253V13h10.5m-10.5 0h-10.5M12 13v6.5m0-6.5h-10.5M12 13h10.5"
+            ></path>
+          </svg>
+          <h3 class="text-2xl font-semibold text-gray-800 mb-2">No Articles Matched</h3>
+          <p class="text-gray-600">
+            Try a different search term or select "All Topics" to see everything.
+          </p>
+        </div>
+      </ng-template>
+    </section>
+  </div>
+</main>

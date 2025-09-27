@@ -1,0 +1,100 @@
+<header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex-shrink-0">
+        <a routerLink="" routerLinkActive="text-indigo-600"
+        [routerLinkActiveOptions]="{exact: true}" class="text-2xl font-bold text-gray-800 hover:text-indigo-600 transition-colors"
+          >Poshak Yadav</a
+        >
+      </div>
+
+      <nav class="hidden md:flex md:items-center md:space-x-8">
+        <a routerLink="about" routerLinkActive="text-indigo-600 font-bold" class="text-gray-600 hover:text-indigo-600 transition-colors">About</a>
+        <a routerLink="projects" routerLinkActive="text-indigo-600 font-bold" class="text-gray-600 hover:text-indigo-600 transition-colors"
+          >Projects</a
+        >
+        <a routerLink="blogs" routerLinkActive="text-indigo-600 font-bold" class="text-gray-600 hover:text-indigo-600 transition-colors"
+          >Blogs</a
+        >
+        <a
+          routerLink="contact"
+          routerLinkActive="bg-indigo-800"
+          class="px-4 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700 transition-colors"
+          >Contact Me</a
+        >
+      </nav>
+
+      <div class="md:hidden flex items-center">
+        <button
+          (click)="toggleMobileMenu()"
+          class="text-gray-800 hover:text-indigo-600 focus:outline-none"
+        >
+          <svg
+            *ngIf="!isMobileMenuOpen"
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+
+          <svg
+            *ngIf="isMobileMenuOpen"
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="isMobileMenuOpen" class="md:hidden">
+    <nav class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a
+        (click)="toggleMobileMenu()"
+        routerLink="about"
+        routerLinkActive="bg-indigo-100 text-indigo-700"
+        class="block px-3 py-2 text-base font-medium text-gray-600 hover:bg-indigo-50 rounded-md"
+        >About</a
+      >
+      <a
+        (click)="toggleMobileMenu()"
+        routerLink="projects"
+        routerLinkActive="bg-indigo-100 text-indigo-700"
+        class="block px-3 py-2 text-base font-medium text-gray-600 hover:bg-indigo-50 rounded-md"
+        >Projects</a
+      >
+      <a
+        (click)="toggleMobileMenu()"
+        routerLink="blogs"
+        routerLinkActive="bg-indigo-100 text-indigo-700"
+        class="block px-3 py-2 text-base font-medium text-gray-600 hover:bg-indigo-50 rounded-md"
+        >Blogs</a
+      >
+      <a
+        (click)="toggleMobileMenu()"
+        routerLink="contact"
+        routerLinkActive="bg-indigo-800"
+        class="block w-full text-left px-3 py-2 mt-2 text-base font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700"
+        >Contact Me</a
+      >
+    </nav>
+  </div>
+</header>
