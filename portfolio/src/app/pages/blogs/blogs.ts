@@ -91,6 +91,17 @@ export class Blogs implements OnInit {
         tags: ['Rust', 'Backend', 'Performance'],
         primaryTag: 'Rust',
       },
+      {
+        id: 6,
+        title: "Asynchronous Programming in Rust: A Comprehensive Guide",
+        excerpt:
+          "Dive into Rust's async/await: from sync vs. async basics to futures, executors, and real-world concurrency with Tokio and reqwest.",
+        slug: 'rust-asynchronous-programming-guide',
+        date: new Date('2025-10-02'),
+        imageUrl: 'https://placehold.co/600x300/1F2937/F9FAFB?text=Rust',
+        tags: ['Rust', 'Backend', 'Performance', 'Concurrency', 'Async', 'Await', 'Tokio', 'Reqwest', 'Futures', 'Executors', 'Sync vs Async', 'Async/Await'],
+        primaryTag: 'Rust',
+      },
     ];
 
     // 2. Initialize the displayed list

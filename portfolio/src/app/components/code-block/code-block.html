@@ -1,0 +1,17 @@
+<div class="code-container">
+  <button
+    class="copy-button"
+    (click)="copyCode()"
+    [attr.aria-label]="copied ? 'Code copied to clipboard' : 'Copy code to clipboard'"
+  >
+    {{ copied ? '✅ Copied!' : '📋 Copy' }}
+  </button>
+  <pre>
+    <code 
+      [attr.id]="id || null" 
+      class="code-content" 
+      [ngClass]="'language-' + language" 
+      [innerHTML]="safeCode"
+    ></code>
+  </pre>
+</div>

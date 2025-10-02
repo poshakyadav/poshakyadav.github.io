@@ -13,3 +13,10 @@
 .animate-pulse-slow {
   animation: pulse-slow 8s infinite ease-in-out;
 }
+
+.action-buttons {
+  @media (width <= 400px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}

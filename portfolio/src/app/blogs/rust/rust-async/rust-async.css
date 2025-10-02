@@ -1,0 +1,241 @@
+/* -------------------------------------------------------------------------- */
+/* GLOBAL MODERN BASE STYLES                         */
+/* -------------------------------------------------------------------------- */
+
+/* Use a clean, professional sans-serif font stack */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  line-height: 1.6;
+  color: #1e293b; /* Dark slate text for high contrast */
+  background-color: #f8fafc; /* Very light background for less eye strain */
+}
+
+/* -------------------------------------------------------------------------- */
+/* LAYOUT STYLES (REPLACING TAILWIND)                                         */
+/* -------------------------------------------------------------------------- */
+
+/* Class: .blog-main-container (Replaces pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white) */
+.blog-main-container {
+  background-color: #ffffff; /* Explicitly set main content background */
+  padding-top: 2rem; /* Default top padding (pt-8) */
+  padding-bottom: 4rem; /* Default bottom padding (pb-16) */
+  min-height: 100vh; /* Ensure it covers the viewport height */
+}
+
+/* Class: .blog-layout-wrapper (Replaces flex justify-between px-4 mx-auto max-w-screen-xl) */
+.blog-layout-wrapper {
+  /* Center the content horizontally */
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Set max width (max-w-screen-xl is usually around 1280px) */
+  max-width: 1280px;
+
+  /* Horizontal padding (px-4 is 1rem) */
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  /* Use Flexbox for general layout structure (flex justify-between) */
+  display: flex;
+  justify-content: center; /* Center the article content specifically */
+}
+
+/* Class: .blog-article-content (Replaces mx-auto w-full max-w-2xl format...) */
+.blog-article-content {
+  /* Ensures content takes full width up to its max-width */
+  width: 100%;
+
+  /* Set the maximum width for the reading column (max-w-2xl is approx 65ch or 42rem) */
+  max-width: 768px; /* Slightly wider than 2xl for better flow on large screens */
+
+  /* Basic reading format styles */
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.code-highlight{
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+    font-weight: 500;
+    background-color: #eef4ff; /* Very light blue background */
+    color: #4338ca; /* Deep indigo text color (Rust-like theme) */
+    padding: 0.2em 0.4em;
+    border-radius: 4px; 
+    border: 1px solid #dbeafe; /* Subtle border for definition */
+    
+    /* Display adjustment */
+    /* white-space: nowrap; /* Prevents inline code from wrapping awkwardly */
+    white-space: normal;
+}
+
+/* Responsive Padding Adjustments (lg:pt-16 lg:pb-24) */
+@media (min-width: 1024px) {
+  /* Equivalent to Tailwind's 'lg' breakpoint */
+  .blog-main-container {
+    padding-top: 4rem; /* lg:pt-16 */
+    padding-bottom: 6rem; /* lg:pb-24 */
+  }
+}
+
+/* Base style for the main content area */
+.bg-white {
+  background-color: #ffffff; /* Keep main content background pure white */
+}
+
+/* Ensure article content fills the screen width on smaller devices */
+/* .mx-auto {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+} */
+
+/* -------------------------------------------------------------------------- */
+/* TYPOGRAPHY & HEADINGS                           */
+/* -------------------------------------------------------------------------- */
+
+/* Styling for the main content container to set max width and overall flow */
+.format {
+  /* The max-w-2xl class from Tailwind (approx 42rem) is good, ensure proper line-length */
+  max-width: 65ch;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  color: #0f172a; /* Even darker for emphasis */
+  margin-top: 2.5rem; /* Large vertical spacing above headings */
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem; /* Larger and impactful for the main title */
+  font-weight: 800;
+  margin-top: 0;
+  border-bottom: 3px solid #f1f5f9; /* Subtle separator */
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  /* Use a left border as a modern visual divider */
+  border-left: 4px solid #007bff; /* Primary brand color accent */
+  padding-left: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #334155;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem; /* Slightly larger base text for readability */
+}
+
+a{
+    color: #007bff; /* Primary link color */
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+/* Strong/Bold text styling */
+strong {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* -------------------------------------------------------------------------- */
+/* LISTS AND TABLES                               */
+/* -------------------------------------------------------------------------- */
+
+ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+/* Use custom bullets for a subtle modern look */
+ul li::marker {
+  color: #007bff; /* Primary color bullets */
+  font-size: 1.1em;
+}
+
+/* Table Styling for Data Clarity */
+table {
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; /* Rounded corners for modern feel */
+  overflow: hidden; /* Ensures borders/shadows look clean */
+}
+
+thead tr {
+  background-color: #f1f5f9; /* Light grey header background */
+  color: #0f172a;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+th,
+td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Subtle stripe effect for readability */
+tbody tr:nth-child(even) {
+  background-color: #fcfcfc;
+}
+
+tbody tr:hover {
+  background-color: #f0f9ff; /* Highlight row on hover */
+  transition: background-color 0.2s ease;
+}
+
+/* -------------------------------------------------------------------------- */
+/* RESPONSIVENESS (MOBILE)                        */
+/* -------------------------------------------------------------------------- */
+
+/* Mobile-first adjustments for small screens (max-width: 768px) */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  /* Make tables stackable or scrollable on tiny screens */
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto; /* Allows horizontal scrolling for wide tables */
+    white-space: nowrap; /* Prevents cell content from wrapping unnecessarily */
+  }
+}
